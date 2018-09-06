@@ -1,0 +1,72 @@
+// Base Elements
+
+* {
+    box-sizing: border-box;
+    font-family: inherit;
+    line-height: inherit;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+html {
+    background-color: $color-bg;
+    color: $color-default;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    height: 100%;
+}
+
+a {
+    color: $color-brand;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+button {
+    background-color: $color-brand;
+    border: 2px solid $color-brand;
+    cursor: pointer;
+    color: $color-white;
+    font-weight: $font-weight-bold;
+    height: $button-height;
+    padding: $padding-small $padding-default;
+    text-transform: uppercase;
+    @include transition-default(all);
+
+    &:hover {
+        background: $color-white;
+        color: $color-brand;
+    }
+}
+
+input {
+    border: 0;
+    height: $input-height;
+    padding: $padding-small;
+
+    @include responsive-to($screen-mobile-l) {
+		width: 130px;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-headings;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-headings;
+    margin: 0;
+}
+
+h1, .h1 {
+    font-size: $font-size-h1;
+
+    @include responsive-from($screen-laptop) {
+		font-size: $font-size-h1-desktop;
+	}
+}

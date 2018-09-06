@@ -1,0 +1,19 @@
+// Media Queries
+
+@mixin responsive-from($breakpoint) {
+	@media only screen and (min-width: $breakpoint) { @content; }
+}
+
+@mixin responsive-to($breakpoint) {
+	@media only screen and (max-width: $breakpoint - 1px) { @content; }
+}
+
+@mixin responsive-between($breakpoint-from, $breakpoint-to) {
+	@media only screen and (min-width: $breakpoint-from) and (max-width: $breakpoint-to - 1px) { @content; }
+}
+
+// Transitions
+
+@mixin transition-default($property) {
+	transition: $property $transition-duration-default $transition-timing-default;
+}

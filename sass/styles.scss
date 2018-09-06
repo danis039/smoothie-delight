@@ -1,0 +1,117 @@
+// Import custom partials
+@import "colors";
+@import "layout";
+@import "typography";
+
+// Import custom mixins
+@import "mixins";
+
+// Import custom styles
+@import "base";
+
+
+.brand {
+	border-bottom: 2px solid $color-brand;
+	font-family: $font-family-brand;
+	font-size: $font-size-h2;
+	margin: 0 $padding-small;
+	padding: 0 $padding-default;
+	position: relative;
+	top: 10px;
+
+	@include responsive-from($screen-laptop-l) {
+		text-align: center;
+		font-size: $font-size-h2-desktop;
+	}
+}
+
+.brand__highlight {
+	color: $color-brand;
+}
+
+.jumbotron {
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	height: $jumbotron-height;
+	margin: $padding-small;
+	padding: $padding-default;
+
+	@include responsive-between($screen-laptop, $screen-laptop-l) {
+		background-position-y: -250px;
+	}
+
+	@include responsive-from($screen-tablet) {
+		height: $jumbotron-height-tablet;
+	}
+
+	@include responsive-from($screen-laptop-l) {
+		align-items: center;
+		font-size: $font-size-base-desktop;
+		padding: $padding-default * 4;
+	}
+
+	&.jumbotron--healthy {
+		background-image: url("/images/brooke-lark-230140-unsplash-rotated.jpg");
+
+		@include responsive-from($screen-laptop-l) {
+			background-image: url("/images/brooke-lark-230140-unsplash.jpg");
+			justify-content: flex-end;
+		}
+	}
+
+	&.jumbotron--experience {
+		background-image: url("/images/monika-grabkowska-727071-unsplash.jpg");
+
+		@include responsive-from($screen-laptop-l) {
+			background-image: url("/images/melissa-walker-horn-552009-unsplash.jpg");
+		}
+	}
+
+	&.jumbotron--weight {
+		background-image: url("/images/pineapple-supply-co-224098-unsplash-rotated.jpg");
+
+		@include responsive-from($screen-laptop-l) {
+			background-image: url("/images/pineapple-supply-co-224098-unsplash.jpg");
+			justify-content: flex-end;
+		}
+	}
+
+	&.jumbotron--muscle {
+		background-image: url("/images/rawpixel-618743-unsplash-rotated.jpg");
+
+		@include responsive-from($screen-laptop-l) {
+			background-image: url("/images/rawpixel-618743-unsplash.jpg");
+		}
+	}
+
+	&.jumbotron--newsletter {
+		background-image: url("/images/markus-spiske-440438-unsplash.jpg");
+
+		@include responsive-from($screen-laptop-l) {
+			background-image: url("/images/markus-spiske-440438-unsplash-rotated.jpg");
+		}
+	}
+}
+
+.jumbotron__header {
+	&.jumbotron__header--experience {
+		@include responsive-from($screen-laptop-l) {
+			color: $color-alt;
+		}
+	}
+
+	&.jumbotron__header--muscle {
+		@include responsive-from($screen-laptop-l) {
+			max-width: 400px;
+		}
+	}
+
+	&.jumbotron__header--newsletter {
+		color: $color-alt;
+	}
+
+	span {
+		display: block;
+	}
+}
